@@ -1,14 +1,18 @@
 const express = require("express");
 const router = express.Router();
 
-const usuarioHandler = require("./usuario.handler");
+const produtoHandler = require("./produto.handler");
 
 router.post("/produto", (req, res)=>{
-    usuarioHandler.cadastrar(req, res).then(dados => res.send(dados));
+    produtoHandler.cadastrar(req, res).then(dados => res.send(dados));
+});
+
+router.post("/produto/login", (req, res)=>{
+    produtoHandler.login(req, res).then(dados => res.send(dados));
 });
 
 router.get("/produto", (req, res)=>{
-    usuarioHandler.pegar(req, res).then(dados => res.send(dados));
+    produtoHandler.pegar(req, res).then(dados => res.send(dados));
 })
 
 module.exports = router;

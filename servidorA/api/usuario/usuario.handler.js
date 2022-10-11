@@ -10,14 +10,9 @@ async function pegar(req, res){
 }
 
 async function login(req, res){
-    const usuarios = await crud.pegar("Usuarios");
     const email = req.body.email;
     const senha = req.body.senha;
-    if(usuarios.findIndex(u => u.email == email) != -1 && usuarios.findIndex(u => u.senha == senha) != -1){
-        res.send("true");
-    }else{
-        res.send("false");
-    }
+    return email, senha;
 }
 
 module.exports = {

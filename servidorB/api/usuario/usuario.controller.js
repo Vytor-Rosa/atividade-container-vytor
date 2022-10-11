@@ -11,7 +11,7 @@ router.get("/usuario", (req, res)=>{
     usuarioHandler.pegar(req, res).then(dados => res.send(dados));
 })
 
-router.post("/usuario/login", (req, res)=>{
+router.get("/usuario/login", (req, res)=>{
     usuarioHandler.login(req, res).then(dados => res.send(dados));
 });
 
